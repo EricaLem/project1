@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+	
+{% block title %}
+{% endblock %}
+
+{% block heading %}
+	Book details.
+{% endblock %}
+
+{% block body %}    
+
+	<ul class="list-group">
+		<li class="list-group-item"><b>Title:</b> <i>{{result.title}}</i></li>
+		<li class="list-group-item"><b>Author:</b> {{result.author}}</li>
+		<li class="list-group-item"><b>Publication year:</b> {{result.year}}</li>
+		<li class="list-group-item"><b>ISBN number:</b> {{result.isbn}}</li>
+	</ul>
+	<br>
+	<ul class="list-group">
+		{% for review in reviews %}
+			<li class="list-group-item">{{ reviews }}</li>
+		{% endfor %}
+	</ul>
+	<br>
+
+	<h3>
+		Leave a review:
+	</h3>
+	<form action="{{ url_for('details') }}" method="post">
+		 <div class="form-group">
+		    <label for="rating">Rate on a scale of 1 to 5:</label>
+		    <select class="form-control" id="rating" name="rating">
+		      <option>1. Wow, highly recommend!</option>
+		      <option>2. Thoroughly enjoyable read.</option>
+		      <option>3. I liked it OK.</option>
+		      <option>4. Meh.</option>
+		      <option>5. Not my cup of tea.</option>
+		    </select>
+		</div>
+		<div class="form-group">
+			<textarea class="form-control" id="review" name="review" rows="5" placeholder="What did you think of the book?"></textarea>
+		</div>
+		<br>
+		<div>
+			<button class="btn btn-primary">Publish review</button>
+		</div> 
+	</form>
+		<br>
+		<a href= "{{ url_for('member') }}">Return to search page.</a>
+
+{% endblock %}
+

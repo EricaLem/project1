@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+	
+{% block title %}
+{% endblock %}
+
+{% block heading %}
+	Success!
+{% endblock %}
+
+{% block body %}    
+	{{ message }}
+	<br>
+	<br>
+	<a href= "{{ url_for('member') }}">Return to search</a>
+
+{% endblock %}
+
