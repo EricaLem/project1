@@ -1,8 +1,5 @@
 {% extends "layout.html" %}
 
-{% block title %}
-{% endblock %}
-
 {% block heading %}
 	Sign up to join our growing community of book worms!
 {% endblock %}
@@ -17,10 +14,10 @@
 		<div class="form-group">
 			<label for="username">Username:</label><br>
 			<!-- <input class="form-control" id="username" name="username" placeholder="Enter a username"><br> -->
-			<input type="text" id="username" name="username" placeholder="Enter a username"><br>
+			<input type="text" id="username" name="username" class="form-control" placeholder="Enter a username"><br>
 			<br>
 			<label for="password">Password:</label><br>
-			<input type="text" id="password" name="password" placeholder= "Enter a password"><br>
+			<input type="password" id="password" name="password" class="form-control" placeholder= "Enter a password"><br>
 			<br>
 		</div>
 
@@ -31,7 +28,4 @@
 
 {% endblock %}
 
-		<!-- <label for="name">Username:</label><br> -->
-<!-- 		<label for="password">Password:</label><br>
-		<input type="text" id="password" name="password" placeholder= "Enter a password"><br>
-		<br> -->
+

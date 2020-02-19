@@ -9,7 +9,18 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<!-- CSS stylesheet -->
 		<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+		<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
 		<style>
+			h1 {
+				color: lightgray;
+				font-family: "Arvo", serif;
+				font-weight: bold;
+				font-size: 40pt;
+			}
+			h2 {
+				color: darkgray;
+				font-size: 30pt;
+			}
 			h4 {
 				color: gray;
 				font-style: italic;
@@ -31,16 +42,19 @@
 			<br>
 			<h1>Buenida Book Reviews</h1>
 			<div id="linkblock" class="row">
+				<div id="link" class="col-1">
+					<!-- BLANK -->
+				</div>
 				<div id="link" class="col-2">
 					<!-- Home -->
 					<a href= "{{ url_for('index') }}">Home</a>
 				</div>
 				<div id="link" class="col-2">
-					<!-- About us -->
+					<!-- Signup -->
 					<a href= "{{ url_for('signup') }}">Register</a>
 				</div>
 				<div id="link" class="col-2">
-					<!-- Crops we grow -->
+					<!-- Login -->
 					<a href= "{{ url_for('login') }}">Login</a>
 				</div>
 			</div>
