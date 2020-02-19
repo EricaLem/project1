@@ -2,20 +2,56 @@
 <html>
 	<head>
 		<title>BUENIDA BOOK REVIEWS</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel = 
-		"stylesheet" href = "styles.css">
+		<!-- Mobile-responsive tool -
+			Scale the viewport to the width of the device -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+		<!-- Bootstrap (before stylesheets) -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!-- CSS stylesheet -->
+		<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+		<style>
+			h4 {
+				color: gray;
+				font-style: italic;
+			}
+			#reviewBlock {
+				padding: 10px;
+				border: 1px solid lightgray;
+			}
+			#ratingBlock {
+				padding: 10px;
+				border: 1px solid lightgray;
+				color: gray;
+			}
+		</style>
 	</head>
 
 	<body>
 		<div class="container">
 			<br>
 			<h1>Buenida Book Reviews</h1>
+			<div id="linkblock" class="row">
+				<div id="link" class="col-2">
+					<!-- Home -->
+					<a href= "{{ url_for('index') }}">Home</a>
+				</div>
+				<div id="link" class="col-2">
+					<!-- About us -->
+					<a href= "{{ url_for('signup') }}">Register</a>
+				</div>
+				<div id="link" class="col-2">
+					<!-- Crops we grow -->
+					<a href= "{{ url_for('login') }}">Login</a>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<br>
 			<h2>{% block heading %}
 				{% endblock %}
 			</h2>
 		</div>
+		
 		<div class="container">
 			<br>
 			{% block body %}

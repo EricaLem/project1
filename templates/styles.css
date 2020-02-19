@@ -1,10 +1,11 @@
 /*$base-padding: 10px;*/
 /* Headings */
+div.row {
+        border: 1px solid;
+      }
 h1 {
-	color: gray;
+	color: rgba(170, 170, 170, 0.5);
 	text-align: left;
-	font-style: italic;
-	font-family: "Palatino";
 	font-size: 28px;
 	padding: 20px;
 }
@@ -14,6 +15,10 @@ a {
 table {
 	margin: 30px;
 	text-align: center;
+}
+title {
+	margin: 30px;
+	color: rgba(170, 170, 170, 0.5);
 }
 th, td {
 	border: 1px solid gray;
@@ -68,11 +73,13 @@ h4 {
 	/*background-color: #FFF0F5; /*pale pink*/
 	padding: 5px;
 }
-#picblock {
+/*#reviewBlock {
+	padding: 20px;
+	border: 1px solid;
+	}*/
+/*#USER {
 	padding: 15px;
-	}
-#pic {
-	max-width: 90%;
-	height: auto;
-	padding: 10px;
-	}
+	border: 1px solid;
+	text-align: center;
+	}*/
+

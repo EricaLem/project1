@@ -1,0 +1,28 @@
+
+/* Headings */
+h1 {
+	color: gray;
+	
+}
+h2 {
+	color: darkgray;
+}
+/* Captions */
+#linkblock {
+	padding: 5px;
+	border-color: none;
+	}
+#link {
+	color: darkgray;
+	text-align: center;
+	border-color: none;
+	padding: 5px;
+}
+#reviewBlock {
+	padding: 20px;
+	border: 1px solid lightgray;
+	}
+div.row {
+    margin: 30px;
+}
+
