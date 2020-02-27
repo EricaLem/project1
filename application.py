@@ -1,5 +1,6 @@
 import os
 import requests # for access to GoodReads API
+import statistics
 
 from flask import Flask, session, render_template, request, jsonify
 from flask_session import Session # store session server-side
@@ -161,6 +162,36 @@ def details():
 		ratingGR = [session["rating_avg"], session["rating_number"]]
 		return render_template("details.html", result=session["result"], reviews=session["old_reviews"], rating=ratingGR)
 
-if __name__ == "__main__":
+@app.route("/api/<isbn>", methods=["GET", "POST"])
+def book_api(isbn):
+	"""Return details about a book by its ISBN #."""
+	session["isbn"] = isbn
+	# Make sure book exists in database
+	checkBook = db.execute("SELECT * FROM books WHERE isbn = :isbn", {"isbn": session["isbn"]}).rowcount
+	bookz = db.execute("SELECT * FROM books WHERE isbn = :isbn", {"isbn": session["isbn"]}).fetchone()
+	session["bookID"] = bookz.id
+	reviewz = db.execute("SELECT * FROM reviews WHERE book_id = :book_id", {"book_id": session["bookID"]}).fetchall()
+	reviewCount = db.execute("SELECT * FROM reviews WHERE book_id = :book_id", {"book_id": session["bookID"]}).rowcount
+	sum_num = 0
+	for i in range(reviewCount):
+		ratez = reviewz[i].rating
+		sum_num = sum_num + ratez
+	avg = sum_num / reviewCount
+
+	if checkBook == 0:
+		# Return 404 Error
+		return jsonify({"error": "Invalid"}), 422
+	else:
+		# Get book data
+  		return jsonify({
+  			"title": bookz.title,
+  			"author": bookz.author,
+  			"year": bookz.year,
+  			"isbn": bookz.isbn,
+  			"review_count": reviewCount,
+  			"average_score": avg
+ 			})
+
+if __name__ == '__main__':
 	with app.app_context():
 		main()
