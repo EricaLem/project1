@@ -15,9 +15,13 @@ Check out a runthough of the website here: https://youtu.be/sMlXPlJD4cc
 I chose to call the website "Buenida Book Reviews", after the town in my favorite book,
 <i>100 Years of Solitude</i>.
 
-The website contains a homepage (/index), a registration page (/signup), a login page (/login), 
+The website uses the Bootstrap 4 library, CSS styling, and many libraries offered by Flask, SQLAlchemy, and Python.
+
+Webpages include a homepage (/index), a registration page (/signup), a login page (/login), 
 a search page (/member/search), and a book details page (/member/search/details). 
-It uses the Bootstrap 4 library, CSS styling, and many libraries offered by Flask, SQLAlchemy, and Python.
+
+The "book details page" also contains external data using GoodReads API (if applicable). The website has also 
+encorporated API access for the address /api/<isbn>, which displays book data in a JSON format. 
 
 The repository contains:
 - a Python file for the Flask application, application.py
